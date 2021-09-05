@@ -68,13 +68,16 @@ namespace LinkedLists
         }
         public void Insert(int data, int position) 
         {
+           
             Node newNode = new Node(data);
             Node current = headNode;
 
             if (headNode == null ) {  return; } 
+            int count = 0; 
 
             for (var i = 1; i < position - 1; i++)
             {
+                count++;
                 current = current.next;
             }
             newNode.next = current.next;

@@ -16,7 +16,7 @@ namespace LinkedLists
                 linkedList.Append(data);
             }
 
-            linkedList.Insert(2, 1);
+            linkedList.Insert(2, 4);
             
             linkedList.Print();
 
