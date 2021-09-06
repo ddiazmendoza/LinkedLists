@@ -68,6 +68,11 @@ namespace LinkedLists
         }
         public void Insert(int data, int position) 
         {
+            if (position <= 1) 
+            {
+                throw new System.ArgumentOutOfRangeException("La posición no puede ser el inicio de la lista.");
+                
+            }
            
             Node newNode = new Node(data);
             Node current = headNode;
@@ -78,7 +83,14 @@ namespace LinkedLists
             for (var i = 1; i < position - 1; i++)
             {
                 count++;
-                current = current.next;
+                if (current.next != null) 
+                {
+                    current = current.next;
+                }
+                else 
+                {
+                    throw new System.ArgumentOutOfRangeException("La posición excede el máximo de la lista.");
+                }
             }
             newNode.next = current.next;
             current.next = newNode;

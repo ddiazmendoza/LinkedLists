@@ -3,25 +3,23 @@ using System.Collections.Generic;
 
 namespace LinkedLists
 {
+    public class SampleData 
+    {
+        public static List<int> SampleList = new List<int>() {1, 4, 5, 7, 9, 2, 4};
+    }
     class Program
     {
         static void Main(string[] args)
         {
-            List<int> sampleList = new List<int>() { 1, 5, 10, 3, 6 };
-
             LinkedList linkedList = new LinkedList(); 
 
-            foreach (var data in sampleList)
+            foreach (var data in SampleData.SampleList)
             {
                 linkedList.Append(data);
             }
 
-            linkedList.Insert(2, 4);
-            
+            linkedList.Insert(2, 12);
             linkedList.Print();
-
-
-            
         }
     }
 }
