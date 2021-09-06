@@ -1,9 +1,9 @@
+using System.Collections.Generic;
 namespace LinkedLists
 {
     public class LinkedList
     {
         public Node headNode;
-
         public LinkedList() // Constructor
         {
             headNode = null;
@@ -47,11 +47,7 @@ namespace LinkedLists
                 temp.next = headNode;
                 headNode = temp;
             }
-        }
-        public void Sort() // Ordenar la lista de mayor a menor
-        {
-            // Cómo ordenar de menor a mayor la lista de Nodos?
-        }
+        } 
         public void Append(int data)
         {
             Node currentNode = headNode;
@@ -101,6 +97,39 @@ namespace LinkedLists
             {
                 headNode.Print();
             }
+        }
+        public LinkedList Sort() 
+        {
+            Node currentNode = headNode;
+            
+            var referenceList = new List<int>();
+
+            if (headNode == null || headNode.next == null) 
+            {
+                return null;
+            }
+            
+            while (currentNode.next != null)
+            {
+                var currentData = currentNode.data;
+                referenceList.Add(currentData);
+                currentNode = currentNode.next;
+
+            }
+            
+            referenceList.Sort();
+            var sortedList = new LinkedList();
+
+            foreach (var data in referenceList)
+            {
+                sortedList.Append(data);
+            }
+            System.Console.WriteLine();
+
+            return sortedList;
+            
+
+            // Cómo ordenar de menor a mayor la lista de Nodos?
         }
     }
 }

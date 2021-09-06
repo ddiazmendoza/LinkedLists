@@ -5,21 +5,29 @@ namespace LinkedLists
 {
     public class SampleData 
     {
-        public static List<int> SampleList = new List<int>() {1, 4, 5, 7, 9, 2, 4};
+        public static List<int> SampleList = new List<int>() {5, 4, 8, 7, 9, 2, 4}; // 7
     }
     class Program
     {
         static void Main(string[] args)
         {
-            LinkedList linkedList = new LinkedList(); 
+            var linkedList = LoadSampleData();
 
+            linkedList.Insert(66, 2);
+            linkedList.Print();
+
+            linkedList = linkedList.Sort();
+            linkedList.Print();
+        }
+
+        private static LinkedList LoadSampleData()
+        {
+            var linkedList = new LinkedList();
             foreach (var data in SampleData.SampleList)
             {
                 linkedList.Append(data);
             }
-
-            linkedList.Insert(2, 12);
-            linkedList.Print();
+            return linkedList;
         }
     }
 }

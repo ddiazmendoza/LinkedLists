@@ -6,13 +6,13 @@ namespace LinkedLists
     {
         public int data;
         public Node next;
-        public int index;
+
 
         public Node(int i)
         {
             data = i;
             next = null; // El primer Nodo creado no tiene ningún Nodo siguiente
-            index++;
+            
         }
         public void Print()
         {
@@ -21,6 +21,7 @@ namespace LinkedLists
             {
                 next.Print();   // Por lo tanto, imprimir este nodo siguiente también. || Es recursivo puesto que llamamos el Print() desde el mismo método. 
             }
+            Console.WriteLine("");
         }
         public void AddSorted(int data)
         {
